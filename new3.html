@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>off</title>
+</head>
+<body>
+
+	<h1> web development</h1><br><br>
+    <div id='app'></div><br>
+	<button "type='button' onclick ="previous()" value="previous">previous</button><button "type='button' onclick ="next()"value = "next">next</button>
+    <table id="app"></table>
+
+	<script>
+        var i=0;
+        var x;
+        kal(i);
+    function kal(i){
+    	var xhttp=new XMLHttpRequest();
+    	xhttp.onreadystatechange=function(){
+    		if(this.readyState==4 && this.status==200){
+    			good(this,i);
+    		}
+    	};
+    	xhttp.open("GET","new.xml",true);
+    	xhttp.send();
+
+    }
+    function good(xml,i)
+    {
+        var xmlDoc=xml.responseXML;
+        x=xmlDoc.getElementsByTagName("CD");
+        document.getElementById("app").innerHTML="ARTIST:"+
+           x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue+"<br>TITLE:"+
+           x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+"<br>COUNTRY:"+
+           x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"<br>COMPANY"+
+           x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue+"<br>PRICE:"+
+           x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue;  
+        
+        
+     
+    }
+    function next(){
+        if(i<x.length-1){
+            i++;
+            kal(i);
+
+        }
+    }
+    function previous()
+   { 
+      if (i>0) {
+        i--;
+        kal(i);
+      }
+
+   }	</script>
+	</body>
+</html>

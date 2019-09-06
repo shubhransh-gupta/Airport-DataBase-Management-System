@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>off</title>
+</head>
+<body>
+
+	<h1> web development</h1><br><br>
+	<button "type='button' onclick ="hello()">create the details of employee</button><br><br>
+    <table id="app"></table>
+
+	<script>
+    function hello(){
+    	var xhttp=new XMLHttpRequest();
+    	xhttp.onreadystatechange=function(){
+    		if(this.readyState==4 && this.status==200){
+    			shubh(this);
+    		}
+    	};
+    	xhttp.open("GET","new.xml",true);
+    	xhttp.send();
+
+    }
+    function shubh(xml)
+    {
+        var i;
+        var xmlDoc=xml.responseXML;
+        var table="<tr><th>Artist</th><th>Title</th><th>country</th><th>cmpany</th><th>PRICE</th></tr>";
+        var x=xmlDoc.getElementsByTagName("CD");
+        for(i=0; i<x.length ;i++) {
+            table+="<tr><td>"+
+           x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue+"</td><td>"+
+           x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+"</td><td>"+
+           x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td><td>"+
+           x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue+"</td><td>"+
+           x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue+"</td></tr>";  
+        } 
+        
+     document.getElementById("app").innerHTML=table;
+    }
+	</script>
+	</body>
+</html>

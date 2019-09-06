@@ -1,0 +1,110 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <title>jQuery</title>
+    
+  <style type="text/css">
+   .var h2,h3,h4{
+      color:red;
+      font-weight: 5;
+    }
+  </style>
+  <script>
+    //Single Click Paragraph Hides, Double Click Paragraph Shows
+    $(document).ready(function(){
+      $("#pbutton").click(function(){
+      $("#para").hide();
+      });
+      $("#pbutton").dblclick(function(){
+      $("#para").show("fast");
+      });
+  });
+
+    // H1 Hide and Show
+    $(document).ready(function(){
+      $("#hidbut").click(function(){
+        $("#cn").hide("slow");
+      });
+      $("#shwbut").click(function(){
+        $("#cn").show("slow");
+      });
+    });
+
+
+    // CSS Properties
+     $(document).ready(function(){
+        $("#cssbtn").click(function(){
+          $("#cnn").css({"font-size":"100px","background-color":"yellow"});
+        });
+      });
+
+     // Fadein Fadeout and Toggle
+     $(document).ready(function(){
+        $("#fadin").click(function(){
+          $("#fdd").fadeIn(3000);
+        });
+
+        $("#fadout").click(function(){
+          $("#fdd").fadeOut(3000);
+        });
+
+        $("#fadtog").click(function(){
+          $("#fdd").fadeToggle(3000);
+        });
+      });
+
+
+
+  </script>
+  </head>
+  <body>
+   
+   <!-- Paragraph Hide, Double Click to Show -->
+    <button type="button" id="pbutton" class="btn btn-primary btn-lg">Click to Hide Paragraph</button>
+    <p id="para">
+      The oldest classical Greek and Latin writing had little or no space between words and could be written in boustrophedon (alternating directions).
+    </p>
+
+    <!-- h1 Show Hide -->
+    <button type="button" id="hidbut" class="btn btn-primary btn-lg">Click to Hide</button>
+    <button type="button" id="shwbut" class="btn btn-primary btn-lg">Click to Show</button>
+    <h1 id="cn">Hey....!!!!!</h1>
+
+
+    <!-- CSS -->
+    <button type="button" id="cssbtn" class="btn btn-primary btn-lg">Click to Show get CSS Properties</button>
+    <h2 id="cnn">Hey....!!!!!</h2>
+
+    <!-- Fadein Fadeout and Toggle -->
+    <button type="button" id="fadin" class="btn btn-primary btn-lg">Fade In</button>
+    <button type="button" id="fadout" class="btn btn-primary btn-lg">Fade Out</button>
+    <button type="button" id="fadtog" class="btn btn-primary btn-lg">Toggle</button>
+    <h2 id="fdd">Hey....!!!!!</h2>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+index.html

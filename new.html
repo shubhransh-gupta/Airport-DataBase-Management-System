@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id ="app">
+	<h1> web development</h1>
+	<button style="type='button' onclick ="kal()">Create</button>
+</div>
+	<script>
+    function kal(){
+    	var xhttp=new XMLHttpRequest();
+    	xhttp.onreadystatechange=function(){
+    		if(this.readyState==4 && this.status==200){
+    			document.getElementById("app").innerHTML=this.responseText;
+    		}
+    	};
+    	xhttp.open("GET","ht.txt",false);
+    	xhttp.send();
+
+    }
+	</script>
+	</body>
+</html>
